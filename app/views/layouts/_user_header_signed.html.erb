@@ -1,0 +1,74 @@
+<!-- navbar for user -->
+<ul class="nav navbar-nav navbar-right">
+  <li class="dropdown">
+    <a href="#" data-toggle="dropdown" class="dropdown-toggle cs-height-for-header-user" role="button"
+       title="<%= current_user.name %>">
+      <div>
+        <span>
+
+        </span>
+        <span>
+          <%= truncate(current_user.name, length: 8) %>
+          <b class="caret"></b>
+        </span>
+      </div>
+    </a>
+    <ul class="dropdown-menu" role="menu" aria-labelledby="basic-nav-dropdown">
+      <li role="presentation">
+        <%= link_to user_path(current_user.id) do %>
+          <i class="glyphicon glyphicon-user"></i>
+          <span>Thông tin tài khoản</span>
+        <% end %>
+      </li>
+      <li role="presentation">
+        <%= link_to edit_user_registration_path do %>
+          <i class="glyphicon glyphicon-wrench"></i>
+          <span>Thiết lập</span>
+        <% end %>
+      </li>
+      <li role="separator" class="divider"></li>
+      <li role="presentation">
+        <%= link_to destroy_user_session_path, method: :delete do %>
+          <i class="glyphicon glyphicon-log-out"></i>
+          <span>Đăng xuất</span>
+        <% end %>
+      </li>
+    </ul>
+  </li>
+</ul>
+<!-- event for user -->
+<ul class="nav navbar-nav navbar-right">
+  <li class="dropdown">
+    <a href="#" data-toggle="dropdown" class="dropdown-toggle"
+       title="Thông báo">
+      <div>
+        <span class="glyphicon glyphicon-bell">
+        </span>
+        <span class="user-title">
+          <b class="caret"></b>
+        </span>
+      </div>
+    </a>
+    <ul class="dropdown-menu" role="menu" aria-labelledby="basic-nav-dropdown">
+      <li role="presentation">
+        <%= link_to "#" do %>
+          <i class="glyphicon glyphicon-user"></i>
+          <span>Thông tin tài khoản</span>
+        <% end %>
+      </li>
+      <li role="presentation">
+        <%= link_to "#" do %>
+          <i class="glyphicon glyphicon-wrench"></i>
+          <span>Thiết lập</span>
+        <% end %>
+      </li>
+      <li role="separator" class="divider"></li>
+      <li role="presentation">
+        <%= link_to destroy_user_session_path, method: :delete do %>
+          <i class="glyphicon glyphicon-log-out"></i>
+          <span>Đăng xuất</span>
+        <% end %>
+      </li>
+    </ul>
+  </li>
+</ul>
